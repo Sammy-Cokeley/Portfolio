@@ -1,0 +1,66 @@
+:root {
+  --jet: #2a2b2aff;
+  --nickel: #706c61ff;
+  --cosmic-latte: #f8f4e3ff;
+  --red-ryb: #f4442eff;
+  --light-steel-blue: #aec2f0ff;
+}
+
+body {
+  background-color: var(--jet);
+  font-family: "Oswald", sans-serif;
+  margin: 0;
+}
+
+.nav {
+  height: 48px;
+  background-color: var(--nickel);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nav-item {
+  margin: 0px 42px;
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  font-size: larger;
+  color: var(--cosmic-latte);
+}
+
+.nav-item::before,
+.nav-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--cosmic-latte);
+  transform: scaleX(0);
+  transition: transform 0.25s;
+}
+
+.nav-item::before {
+  top: -1px;
+  transform-origin: left;
+}
+
+.nav-item::after {
+  bottom: -3px;
+  transform-origin: right;
+}
+
+.nav-item:hover::before,
+.nav-item:hover::after {
+  transform: scaleX(1);
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--nickel);
+}
