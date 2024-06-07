@@ -1,5 +1,5 @@
 import { render } from "react-dom";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Nav from "./Nav";
 import Footer from "./Footer";
 import Home from "./Home";
@@ -8,7 +8,7 @@ import Projects from "./Projects";
 import Contact from "./Contact";
 
 const App = () => {
-  const items = ["Home", "Projects", "About", "Contact"];
+  const items = ["Home", "About", "Projects", "Contact"];
 
   return (
     <BrowserRouter basename={"/"}>
