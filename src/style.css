@@ -1,5 +1,5 @@
 :root {
-  --jet: #2a2b2aff;
+  --creame: #eef0df;
   --nickel: #706c61ff;
   --cosmic-latte: #f8f4e3ff;
   --red-ryb: #f4442eff;
@@ -7,10 +7,12 @@
 }
 
 body {
-  background-color: var(--jet);
+  background-color: var(--creame);
   font-family: "Oswald", sans-serif;
   margin: 0;
+  overflow: hidden;
 }
+
 
 .nav {
   height: 48px;
@@ -27,7 +29,7 @@ body {
   display: inline-block;
   text-decoration: none;
   font-size: larger;
-  color: var(--cosmic-latte);
+  color: var(--creame);
 }
 
 .nav-item::before,
@@ -64,3 +66,106 @@ body {
   width: 100%;
   background-color: var(--nickel);
 }
+
+.name-container{
+  width: fit-content;
+  overflow: hidden;
+}
+
+.name {
+  margin: auto;
+  width: fit-content;
+  font-size: 8rem;
+  font-weight: bold;
+  overflow: hidden;
+}
+
+.name span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: drop-in 0.5s forwards;
+}
+
+.line {
+  width: 0;
+  height: 10px;
+  background-color: #333;
+  animation: slide-in-out 10s infinite;
+}
+
+.line.reverse {
+  animation: slide-in-out-reverse 10s infinite;
+}
+
+@keyframes slide-in-out {
+  0% {
+      width: 0;
+      transform: translateX(0);
+      opacity: 0;
+  }
+  25% {
+      width: 100%;
+      transform: translateX(0);
+      opacity: 1;
+  }
+  50% {
+      width: 100%;
+      transform: translateX(0);
+      opacity: 1;
+  }
+  75% {
+      width: 100%;
+      transform: translateX(100%);
+      opacity: 1;
+  }
+  100% {
+      width: 0;
+      transform: translateX(100%);
+      opacity: 0;
+  }
+}
+
+@keyframes slide-in-out-reverse {
+  0% {
+      width: 0;
+      transform: translateX(100%);
+      opacity: 0;
+  }
+  25% {
+      width: 100%;
+      transform: translateX(0);
+      opacity: 0;
+  }
+  50% {
+      width: 100%;
+      transform: translateX(0);
+      opacity: 1;
+  }
+  75% {
+      width: 100%;
+      transform: translateX(-100%);
+      opacity: 1;
+  }
+  100% {
+      width: 0;
+      transform: translateX(-100%);
+      opacity: 1;
+  }
+}
+
+
+@keyframes drop-in {
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.name span:nth-child(1) { animation-delay: 0.1s; }
+.name span:nth-child(2) { animation-delay: 0.2s; }
+.name span:nth-child(3) { animation-delay: 0.3s; }
+.name span:nth-child(4) { animation-delay: 0.4s; }
+.name span:nth-child(5) { animation-delay: 0.5s; }
+.name span:nth-child(6) { animation-delay: 0.6s; }
+.name span:nth-child(7) { animation-delay: 0.7s; }
